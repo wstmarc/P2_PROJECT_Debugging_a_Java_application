@@ -7,16 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Simple brute force implementation
- *
+ * Manages reading and displaying of symptom data from a source.
+ * The important part is, the return value from the operation, which is a list of strings,
+ * that may contain many duplications. 
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	private String filepath;
 	
 	/**
-	 * 
-	 * @param filepath a full or partial path to file with symptom strings in it, one per line
+	 * Constructor
+	 * @param filepath : A full or partial path to file with symptom strings in it (one per line)
 	 */
 	public ReadSymptomDataFromFile (String filepath) {
 		this.filepath = filepath;
