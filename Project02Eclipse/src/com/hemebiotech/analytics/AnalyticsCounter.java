@@ -13,37 +13,14 @@ import java.util.TreeMap;
  * */
 public class AnalyticsCounter {
 	
-	private static final String path = "Project02Eclipse/";
+	public static final String path = "Project02Eclipse/";
 //	public String file = "sympt0ms.txt";
 	public static String file = "symptoms.txt";
 	
 	/**
-	 * Entry point of the application.
-	 * */
-	public static void main(String args[]) throws Exception {
-		//Instantiate analysis
-		AnalyticsCounter analytics = new AnalyticsCounter();
-		
-		file = "symptoms.txt";
-		
-		final String completePath = path + file;
-		
-		// firstly : Read the file.		
-		String reading = analytics.readFile(completePath);
-		
-		// then : Generate counting of occurrences.
-		Map<String, Integer> counting = analytics.countLineOccurrencesStringToArray(reading);
-		
-		// then : Display the symptoms and their occurrences.
-		analytics.displayMap(counting);
-		
-		// finally : Write this data into the output file.
-		analytics.writeFile(counting);
-	}
-	
-	/**
-	 * Reads the whole text of a file, and returns a String containing its content.
-	 * The full path of access to the file is provided as a parameter.
+	 * Reads the whole text of a file, and returns a String "reading" containing its content.
+	 * The full path of access to the file is provided as a parameter, as a String "pathOfFileToRead".
+	 * If any issue is encountered during reading process, an exception of Input/Output "IOException" is thrown, and it displays an error message in the error output of the console.
 	 * 
 	 * @exception IOException : Signals that an I/O exception of some sort has occurred.
 	 * @param pathOfFileToRead : The full path of the file to read.
@@ -77,13 +54,13 @@ public class AnalyticsCounter {
 	}
 	
 	/**
-	 * Counts the number of occurrence of each symptom in the String, corresponding to the reading of the file containing the symptom lines.
-	 * While the counting, the symptoms and their number of occurrence are stocked into a TreeMap, which sorts automatically the data by natural order (alphabetical order).
+	 * Counts the number of occurrence of each symptom in the String "reading", corresponding to the reading of the file containing the symptom lines.
+	 * While the counting, the symptoms and their number of occurrence are stocked into a TreeMap<String, Integer>, which sorts automatically the data by natural order (alphabetical order).
 	 * 
 	 * The input is a String containing several lines, each ended by a line feed "\n" .
-	 * All the lines are stocked into an Array of Strings.
-	 * All unique lines are stocked into a Map<String, Integer>, and their number of occurrence too, which is calculated into a loop, while reading each element of the Array of Strings.
-	 * Finally, the Map<String, Integer> of symptoms and occurrences, is returned. 
+	 * All the lines are stocked into an Array of Strings "arrayOfSymptoms".
+	 * All unique lines are stocked into a Map<String, Integer> "occurrences", and their number of occurrence too, which is calculated into a loop, while reading each element of the Array of Strings.
+	 * Finally, the Map<String, Integer> "occurrences", filled with symptoms and their number of occurrence, is returned. 
 	 * 
 	 * @param reading : A string containing all the lines of the file being read.
 	 * @return occurrences : A Map<String, Integer> containing as keys the symptoms, and as values the number of occurrence for each symptom.
@@ -101,10 +78,10 @@ public class AnalyticsCounter {
 	}
 	
 	/**
-     * Displays, into the console, each couple key-value of the Map<String, Integer>, containing symptoms and their occurrences.
-     * If the map is empty, displays an error message in the error output of the console.
+     * Displays, into the console, each couple key-value of the Map<String, Integer> "mapToDisplay", containing symptoms and their occurrences.
+     * If the map is empty, it displays an error message in the error output of the console.
      * 
-     * @param mapToDisplay : The Map itself.
+     * @param mapToDisplay : The Map<String, Integer> whose content is to be displayed.
      */
     public void displayMap(Map<String, Integer> mapToDisplay) {
     	if(!mapToDisplay.isEmpty()) {
@@ -118,10 +95,11 @@ public class AnalyticsCounter {
     }
 	
 	/**
-	 * Writes couples key-value contained into a Map<String, Integer> mapToWrite, provided as a parameter, into a file.
+	 * Writes couples key-value contained into a Map<String, Integer> "mapToWrite", provided as a parameter, into a file.
 	 * The String part, which is the couple key, concerns the symptom to be written.
 	 * The Integer part, which is the couple value, concerns the number of occurrence of this symptom.
 	 * The lines are written as follows : symptom=numberOfOccurrenceOfIt .
+	 * If any issue is encountered during writing process, an exception of Input/Output "IOException" is thrown, and it displays an error message in the error output of the console.
 	 * 
 	 * @exception IOException : Signals that an I/O exception of some sort has occurred.
 	 * @param mapToWrite : A Map<String, Integer> containing, as keys the symptoms, and, as values the number of occurrence for each symptom.
