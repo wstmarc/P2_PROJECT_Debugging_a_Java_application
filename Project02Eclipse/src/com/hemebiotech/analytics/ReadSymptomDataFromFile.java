@@ -42,6 +42,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 * @exception IOException : Signals that an I/O exception of some sort has occurred.
 	 * @return result : A List of Strings that contains all the lines of text in the file being read.
 	 * */
+	@Override
 	public List<String> GetSymptoms() {
 		ArrayList<String> result = new ArrayList<String>();
 		
@@ -73,6 +74,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 * @exception IOException : Signals that an I/O exception of some sort has occurred.
 	 * @return reading : A more or less long String that contains all the lines of text in the file being read.
 	 * */
+	@Override
 	public String readFile() {
 		String reading = "";
 		

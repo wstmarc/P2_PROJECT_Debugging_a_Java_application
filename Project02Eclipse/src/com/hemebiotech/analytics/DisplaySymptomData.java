@@ -2,7 +2,7 @@ package com.hemebiotech.analytics;
 
 import java.util.Map;
 
-public class DisplaySymptomData {
+public class DisplaySymptomData implements ISymptomDisplayer {
 
 	// -------------------- METHODS --------------------
 	/**
@@ -11,6 +11,7 @@ public class DisplaySymptomData {
      * 
      * @param mapToDisplay : The Map<String, Integer> whose content is to be displayed.
      */
+	@Override
     public void displayMap(Map<String, Integer> mapToDisplay) {
     	if(!mapToDisplay.isEmpty()) {
     		for(Map.Entry<String, Integer> entry : mapToDisplay.entrySet()) {

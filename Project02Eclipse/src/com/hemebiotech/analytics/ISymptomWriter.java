@@ -7,6 +7,6 @@ import java.util.Map;
  */
 public interface ISymptomWriter {
 
-	void writeFile(Map<String, Integer> map);
+	void writeFile(Map<String, Integer> mapStringInteger);
 	
 }

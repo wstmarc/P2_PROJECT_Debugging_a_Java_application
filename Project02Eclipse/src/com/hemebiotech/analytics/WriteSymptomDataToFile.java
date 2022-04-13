@@ -37,6 +37,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
 	 * @exception IOException : Signals that an I/O exception of some sort has occurred.
 	 * @param mapToWrite : A Map<String, Integer> containing, as keys the symptoms, and, as values the number of occurrence for each symptom.
 	 * */
+	@Override
 	public void writeFile(Map<String, Integer> mapToWrite) {
 		try {
 			FileWriter writer = new FileWriter (this.getFilepath());

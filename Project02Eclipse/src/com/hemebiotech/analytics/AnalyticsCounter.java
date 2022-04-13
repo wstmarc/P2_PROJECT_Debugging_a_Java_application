@@ -8,7 +8,7 @@ import java.util.TreeMap;
 /**
  * Manages the counting of occurrences of symptoms.
  * */
-public class AnalyticsCounter {
+public class AnalyticsCounter implements ISymptomCounter {
 	
 	// -------------------- METHODS --------------------
 	/**
@@ -22,6 +22,7 @@ public class AnalyticsCounter {
 	 * @param reading : A List of Strings containing all the lines of the file being read.
 	 * @return occurrences : A Map<String, Integer> containing as keys the symptoms, and as values the number of occurrence for each symptom.
 	 * */
+	@Override
 	public Map<String, Integer> countLineOccurrencesInList(List<String> reading) {
 		Map<String, Integer> occurrences = new TreeMap<String, Integer>();//A TreeMap object naturally (automatically) manages the sorting of its keys (by alphabetical order).
 		
@@ -44,6 +45,7 @@ public class AnalyticsCounter {
 	 * @param reading : A String containing all the lines of the file being read.
 	 * @return occurrences : A Map<String, Integer> containing as keys the symptoms, and as values the number of occurrence for each symptom.
 	 * */
+	@Override
 	public Map<String, Integer> countLineOccurrencesInStringToArray(String reading) {
 		Map<String, Integer> occurrences = new TreeMap<String, Integer>();//A TreeMap object naturally (automatically) manages the sorting of its keys (by alphabetical order).
 		
