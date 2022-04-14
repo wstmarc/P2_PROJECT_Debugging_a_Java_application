@@ -28,7 +28,7 @@ public class Application {
 		final String path = "Project02Eclipse/";
 //		final String fileToRead = "sympt0ms.txt";
 		final String fileToRead = "symptoms.txt";
-		final String fileToWrite = "result.out";
+		final String fileToWrite = "results.out";
 		final String completePathOfFileToRead = path + fileToRead;
 		final String completePathOfFileToWrite = path + fileToWrite;
 		
@@ -60,7 +60,7 @@ public class Application {
 		final String path = "Project02Eclipse/";
 //		final String fileToRead = "sympt0ms.txt";
 		final String fileToRead = "symptoms.txt";
-		final String fileToWrite = "result.out";
+		final String fileToWrite = "results.out";//++++++++ "s" rajouté au nom du fichier.
 		final String completePathOfFileToRead = path + fileToRead;
 		final String completePathOfFileToWrite = path + fileToWrite;
 		
