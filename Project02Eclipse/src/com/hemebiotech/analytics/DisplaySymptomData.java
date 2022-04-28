@@ -1,5 +1,6 @@
 package com.hemebiotech.analytics;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -9,17 +10,17 @@ public class DisplaySymptomData implements ISymptomDisplayer {
 
 	// -------------------- METHODS --------------------
 	@Override
-    public void displayMap(Map<String, Integer> mapToDisplay) {
-		mapToDisplay.keySet().forEach( K -> System.out.println(mapToDisplay.get(K)) );//valeurs
-		mapToDisplay.entrySet().forEach( K -> System.out.println(K.getKey() + " " + K.getValue()) );//clés et valeurs de la map
-//		if(!mapToDisplay.isEmpty()) {
-//    		for(Map.Entry<String, Integer> entry : mapToDisplay.entrySet()) {
-//        		System.out.print(entry.getValue());
-//        		System.out.println("=" + entry.getKey());
-//        	}
-//    	} else {
-//    		System.err.println("No line to display.");
-//    	}
-    }
+    public void display(List<String> listToDisplay) {
+		if(!listToDisplay.isEmpty()) {
+			listToDisplay.forEach( K -> System.out.println(K) );//clés de la list
+    	} else System.err.println("No line to display !!!");
+	}
+	
+	@Override
+    public void display(Map<String, Integer> mapToDisplay) {
+		if(!mapToDisplay.isEmpty()) {
+			mapToDisplay.entrySet().forEach( K -> System.out.println(K.getKey() + " " + K.getValue()) );//clés et valeurs de la map
+    	} else System.err.println("No line to display !!!");
+	}
 	
 }

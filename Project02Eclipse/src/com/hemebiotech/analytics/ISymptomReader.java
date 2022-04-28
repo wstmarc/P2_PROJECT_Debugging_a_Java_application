@@ -1,8 +1,8 @@
 package com.hemebiotech.analytics;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.List;
+import java.io.IOException;
+import java.io.FileNotFoundException;
 
 /**
  * Anything that will read symptom data from a source file.
@@ -16,7 +16,7 @@ public interface ISymptomReader {
 	 * @exception FileNotFoundException : Signals that, for the specified path, the file has not been found.
 	 * @return reading : An ArrayList of Strings that contains all the lines of text in the file being read.
 	 * */
-	List<String> GetSymptoms() throws IOException;
+	List<String> GetSymptoms();
 	
 	/**
 	 * Reads the whole text of a file, and returns a String "reading", containing all its lines.
@@ -25,5 +25,6 @@ public interface ISymptomReader {
 	 * @exception FileNotFoundException : Signals that, for the specified path, the file has not been found.
 	 * @return reading : A more or less long String that contains all the lines of text in the file being read.
 	 * */
-	String readFile() throws IOException;
+	String readFile();
+	
 }

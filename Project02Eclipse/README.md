@@ -1,1 +1,0 @@
-Java Project for OpenClassroom's Project 2 : Debugging a Java application.

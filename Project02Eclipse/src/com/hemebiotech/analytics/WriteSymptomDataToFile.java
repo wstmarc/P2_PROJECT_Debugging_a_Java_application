@@ -1,9 +1,9 @@
 package com.hemebiotech.analytics;
 
+import java.util.Map;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import java.util.Map;
 
 /**
  * Manages the writing of symptom data into a file.
@@ -25,14 +25,14 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
 	// -------------------- METHODS --------------------
 	/**
 	 * Constructor
-	 * @param filepath : A full or partial path to file where to write symptom strings and their number of occurrence (one per line)
+	 * @param filepath : A full or partial path to the file where to write symptom strings and their number of occurrence (one per line).
 	 */
 	public WriteSymptomDataToFile (String filepath) {
 		this.filepath = filepath;
 	}
 	
 	@Override
-	public void writeFile(Map<String, Integer> mapToWrite) throws IOException {
+	public void writeFile(Map<String, Integer> mapToWrite) {
 		try {
 			FileWriter writer = new FileWriter (this.getFilepath());
 			
@@ -51,11 +51,11 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
 			}
 			writer.close();
 		}
-//		catch(IOException e) {
-//			System.err.println("An error occured during I/O process !!!\n" + e.getMessage());
-//		}
 		catch(FileNotFoundException e) {
 			System.err.println("The file has not been found !!!\n" + e.getMessage());
+		}
+		catch(IOException e) {
+			System.err.println("An error occured during I/O process !!!\n" + e.getMessage());
 		}
 	}
 	

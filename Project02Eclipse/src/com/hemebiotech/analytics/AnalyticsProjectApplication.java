@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Launch Analytics Project.
  * */
-public class Application {
+public class AnalyticsProjectApplication {
 	
 	//ATTRIBUTES
 	private static final String path = "Project02Eclipse/";
@@ -21,34 +21,34 @@ public class Application {
 	 * */
 	public static void main(String[] args) {
 		
-		initialMethod();//<---- TODO: renommer
+		analyticsProjectMethod();
 		
 	}
 	
 	/**
 	 * An example of the execution of the application
 	 * 
-	 * Using the given reading method GetSymptoms() from ReadSymptomDataFromFile class.
+	 * Using the initial given reading method GetSymptoms() from ReadSymptomDataFromFile class.
 	 * */
-	public static void initialMethod() {
+	public static void analyticsProjectMethod() {
 		
-		// And: Instantiate all necessary objects to read file, count occurrences, display and write file
+		// Before all: Instantiate all necessary objects to read file, count occurrences, display and write file.
 		ReadSymptomDataFromFile reading = new ReadSymptomDataFromFile(completePathOfFileToRead);
-		AnalyticsCounter counting = new AnalyticsCounter();
+		CountSymptomData counting = new CountSymptomData();
 		DisplaySymptomData displaying = new DisplaySymptomData();
 		WriteSymptomDataToFile writing = new WriteSymptomDataToFile(completePathOfFileToWrite);
 		
-		// Firstly : Read the file to read
+		// Firstly : Read the file to read.
 		List<String> read = reading.GetSymptoms();
 		
 		// Then : Generate counting of symptoms occurrences.
-		//Map<String, Integer> count = counting.countLineOccurrencesInList(read);
+		Map<String, Integer> count = counting.countLineOccurrences(read);
 		
 		// Then, eventually : Display the symptoms and their occurrences.
-		//displaying.displayMap(count);
+		displaying.display(count);
 		
 		// Finally : Write this data into the output file.
-		//writing.writeFile(count);		
+		writing.writeFile(count);		
 	}
 
 }
