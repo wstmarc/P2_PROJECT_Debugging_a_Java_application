@@ -1,8 +1,6 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
-import java.io.IOException;
-import java.io.FileNotFoundException;
 
 /**
  * Anything that will read symptom data from a source file.

@@ -1,8 +1,6 @@
 package com.hemebiotech.analytics;
 
 import java.util.Map;
-import java.io.IOException;
-import java.io.FileNotFoundException;
 
 /**
  * Anything that will write symptom data into a file.
